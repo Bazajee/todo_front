@@ -10,6 +10,6 @@ Create and deploy a todo list React application.
 
 
 ## TO DO: 
-- create login view 
-- create main view 
-- create list view 
+- Create login view 
+- Create main view 
+- Create list view 
