@@ -1,8 +1,10 @@
-export default function Baseview () {
-    const name = 'Baseview'
+import { Outlet } from "react-router-dom";
+export default function Baseview() {
+   const name = "Baseview";
    return (
-       <div>
-           <h1>{name} </h1>
-       </div>
-   )
+      <div>
+         <Outlet />
+         <h1>{name} </h1>
+      </div>
+   );
 }
