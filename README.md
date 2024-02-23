@@ -7,6 +7,7 @@ Create and deploy a todo list React application.
 
 
 ## IN PROGRESS:
+- Handle react router 
 
 
 ## TO DO: 
