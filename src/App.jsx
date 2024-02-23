@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./index.css";
 
-import Homepage from "./views/home.jsx";
+import Homepage from "./views/homeview.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
