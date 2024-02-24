@@ -1,10 +1,30 @@
 import { Outlet } from "react-router-dom";
+import React from "react";
+
+import Toolbar from "../components/toolbar";
+
+import { useQuery} from 'react-query';
+
+import { getTaskLists } from "../data";
+
+
+
+
+
 export default function Baseview() {
-   const name = "Baseview";
+   const { data, isLoading, error } = useQuery('tasks', getTaskLists)
+   console.log(isLoading, data)
+
    return (
-      <div>
-         <Outlet />
-         <h1>{name} </h1>
+      <div >
+          <div className="flex w-full">  
+            <div className="m-4">
+               <Toolbar />
+            </div>
+            <div className="m-4">
+               <Outlet />
+            </div>
+         </div>
       </div>
    );
 }
