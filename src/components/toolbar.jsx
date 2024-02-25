@@ -17,10 +17,10 @@ export default function Toolbar({ taskList }) {
          </div>
          <span></span>
          <ul>
-         {isLoading ? (
+         { isLoading ? (
                <p>is isLoading</p>
             ) : (
-               data.map((listObj) => <li className="hover:text-lime-400">
+               data.map((listObj) => <li key={listObj.id} className="hover:text-lime-400">
                   <NavLink 
                      to={`/list/${listObj.id}`}
                      className={({ isActive }) => {
@@ -35,7 +35,6 @@ export default function Toolbar({ taskList }) {
                )
             )}                               
          </ul>
-         <div></div>
       </div>
    );
 }

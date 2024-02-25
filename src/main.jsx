@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             element: <Homeview />
          },
          {
-            path: "/list/:listname",
+            path: "/list/:listId",
             element: <Listview />,
          },
       ]
