@@ -12,15 +12,15 @@ import { getTaskLists } from "../data";
 
 export default function Baseview() {
    
-   const { data, isLoading, error } = useQuery(
-      'tasks', 
-      async () => {
-         const response = await getTaskLists();
+   // const { data, isLoading, error } = useQuery(
+   //    'tasks', 
+   //    async () => {
+   //       const response = await getTaskLists();
 
-         return response;
-      }
-   )
-   console.log(isLoading, data)
+   //       return response;
+   //    }
+   // )
+   // console.log(isLoading, data)
 
    return (
 
@@ -31,13 +31,6 @@ export default function Baseview() {
             </div>
             <div className="m-4">
                <Outlet />
-            </div>
-            <div>
-                  { 
-                     isLoading? (<p>is isLoading</p>) : ( data.map(obj => <p>{obj.name}</p>)) 
-                  }
-                  
-               
             </div>
          </div>
       </div>
