@@ -16,5 +16,7 @@ Create and deploy a todo list React application.
 - Create login view 
 - Create main view 
 - Create list view 
+- add filter to a listview
+- add search input in toolbar 
 
 

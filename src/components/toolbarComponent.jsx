@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import listContextWrapper from "../contexts/listContext";
-export default function Toolbar({ taskList }) {
-   const { data, isLoading, error } = listContextWrapper();
+import { listContextInstance } from "../contexts/listContext";
 
+export default function Toolbar() {
+
+   const { lists, loading } =  useContext(listContextInstance);
+   
    return (
       <div>
          <div className=" text-5xl font-bold hover:text-lime-400">
@@ -15,24 +18,26 @@ export default function Toolbar({ taskList }) {
                Hello
             </NavLink>
          </div>
-         <span></span>
          <ul>
-         { isLoading ? (
-               <p>is isLoading</p>
+         { loading ? (
+               <p>is loading</p>
             ) : (
-               data.map((listObj) => <li key={listObj.id} className="hover:text-lime-400">
+               lists.map((listObj) => <li key={listObj.id} className="hover:text-lime-400">
                   <NavLink 
                      to={`/list/${listObj.id}`}
                      className={({ isActive }) => {
                      return isActive
                         ? "hover:text-lime-400 text-lime-400 "
                         : "";
-                  }}
+                     }}
                   >
                   {listObj.name}
-                  </NavLink>
-               </li>
+                  </NavLink> 
+                  {}
+                  {/* {listObj.list.map((task) => )} */}
+               </li>,
                )
+
             )}                               
          </ul>
       </div>
