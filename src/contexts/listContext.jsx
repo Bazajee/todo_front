@@ -11,26 +11,23 @@ export  function ListContext({children}) {
    const [tasks, setTasks]= useState([])
    const [loading, setLoading] = useState(true)
 
-   const fetchLists = useQuery('tasks', getTaskLists, {refetchOnWindowFocus: false})
+   const fetchLists = useQuery('lists', getTaskLists, {refetchOnWindowFocus: false})
    const fetchTasks = useQuery('tasks', getTasks, {refetchOnWindowFocus: false})
 
-   console.log('beforeEffect' ,fetchLists.isLoading, fetchLists.isLoading , loading)
+   // console.log('beforeEffect' ,fetchLists.isLoading, fetchLists.isLoading , loading)
+   // !loading && console.log(tasks, fetchTasks)
    // click => button change => post => changebutton (if not error button not change => update use state in context)
+
    useEffect( ()=> {
       !fetchLists.isLoading && setLists(fetchLists.data)
-      !fetchTasks.isLoading && setTasks(fetchTasks.fata)
+      !fetchTasks.isLoading && setTasks(fetchTasks.data)
       if (!fetchLists.isLoading && !fetchLists.isLoading) {setLoading(false)}
-
-      console.log('effect', fetchLists.isLoading, fetchLists.isLoading, loading)
    }, [fetchLists.isLoading, fetchLists.isLoading])
-
-
-
-   !loading && console.log('react', loading, lists, tasks)
    
 
+
    return(
-      <listContextInstance.Provider value={{lists, loading}}>
+      <listContextInstance.Provider value={{lists, tasks, loading}}>
          {children}
       </listContextInstance.Provider>
    )

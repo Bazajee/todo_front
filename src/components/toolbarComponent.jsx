@@ -4,7 +4,7 @@ import { listContextInstance } from "../contexts/listContext";
 
 export default function Toolbar() {
 
-   const { lists, loading } =  useContext(listContextInstance);
+   const { lists, loading } =  useContext(listContextInstance)
    
    return (
       <div>
@@ -15,7 +15,7 @@ export default function Toolbar() {
                   return isActive ? "hover:text-lime-400 text-lime-400 " : "";
                }}
             >
-               Hello
+               <h1>Welcome</h1>  
             </NavLink>
          </div>
          <ul>
@@ -26,15 +26,11 @@ export default function Toolbar() {
                   <NavLink 
                      to={`/list/${listObj.id}`}
                      className={({ isActive }) => {
-                     return isActive
-                        ? "hover:text-lime-400 text-lime-400 "
-                        : "";
+                     return isActive ? " text-lime-400 " : "";
                      }}
                   >
                   {listObj.name}
                   </NavLink> 
-                  {}
-                  {/* {listObj.list.map((task) => )} */}
                </li>,
                )
 
@@ -42,4 +38,5 @@ export default function Toolbar() {
          </ul>
       </div>
    );
+
 }

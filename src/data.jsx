@@ -11,7 +11,7 @@ const taskLists = [
    },
    {
       name: "sport",
-      id: 233,
+      id: 232,
       list: [
          { task_id: 4, state: true, body: "task 4", taskList_id: 232 },
          { task_id: 5, state: true, body: "task 5", taskList_id: 232 },
@@ -35,11 +35,11 @@ const tasks = [
 
 
 export async function getTaskLists() {
-   await new Promise((resolve) => setTimeout(resolve, 500));
+   await new Promise((resolve) => setTimeout(resolve, 800));
    return taskLists
 }
 
 export async function getTasks() {
-   await new Promise((resolve) => setTimeout(resolve, 500));
+   await new Promise((resolve) => setTimeout(resolve, 800));
    return tasks
 }
