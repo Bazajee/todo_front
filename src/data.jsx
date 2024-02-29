@@ -33,18 +33,6 @@ const tasks = [
 
 ]
 
-
-// export async function getTaskLists() {
-//    await new Promise((resolve) => setTimeout(resolve, 800));
-//    return taskLists
-// }
-
-// export async function getTasks() {
-//    await new Promise((resolve) => setTimeout(resolve, 800));
-//    return tasks
-// }
-
-
 export async function getTaskLists() {
    const response = await fetch('/api/lists')
    const lists =  await response.json()
@@ -57,4 +45,3 @@ export async function getTasks() {
    return tasks
 }
 
-console.log('data',getTaskLists())

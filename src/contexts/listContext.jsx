@@ -14,9 +14,6 @@ export  function ListContext({children}) {
    const fetchLists = useQuery('lists',getTaskLists, {refetchOnWindowFocus: false})
    const fetchTasks = useQuery('tasks', getTasks, {refetchOnWindowFocus: false})
 
-   console.log('beforeEffect' ,fetchLists.data, fetchLists.isLoading , loading)
-   // !loading && console.log(tasks, fetchTasks)
-   // click => button change => post => changebutton (if not error button not change => update use state in context)
 
    useEffect( ()=> {
       !fetchLists.isLoading && setLists(fetchLists.data)
