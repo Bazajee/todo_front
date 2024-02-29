@@ -34,12 +34,27 @@ const tasks = [
 ]
 
 
+// export async function getTaskLists() {
+//    await new Promise((resolve) => setTimeout(resolve, 800));
+//    return taskLists
+// }
+
+// export async function getTasks() {
+//    await new Promise((resolve) => setTimeout(resolve, 800));
+//    return tasks
+// }
+
+
 export async function getTaskLists() {
-   await new Promise((resolve) => setTimeout(resolve, 800));
-   return taskLists
+   const response = await fetch('/api/lists')
+   const lists =  await response.json()
+   return lists
 }
 
 export async function getTasks() {
-   await new Promise((resolve) => setTimeout(resolve, 800));
+   const response = await fetch('/api/tasks')
+   const tasks =  await response.json()
    return tasks
 }
+
+console.log('data',getTaskLists())

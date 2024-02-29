@@ -15,7 +15,7 @@ Create and deploy a todo list React application.
 
 
 
-## TO DO: 
+## TO DO:  
 - Implement the possibility to change the body of task 
 - Implement Login 
 - Implement filter to a listview
